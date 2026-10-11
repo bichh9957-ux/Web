@@ -1,414 +1,1078 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rùa [[√a p p]] - Discord Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rùa ⟦√a p p⟧ · carlbot1632</title>
+<meta name="description" content="Bio profile của Rùa ⟦√a p p⟧.">
+<meta name="theme-color" content="#0f111a">
+<meta property="og:title" content="Rùa ⟦√a p p⟧ · carlbot1632">
+<meta property="og:description" content="Ae chs ma sói thì vô link này nhé.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🐢%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-        body {
-            background-color: #0c0e14;
-            color: #dcddde;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow-x: hidden;
-            position: relative;
-        }
+<style>
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --bg:#0f111a;
+  --forest:#2d7d46;
+  --neon:#57f287;
+  --lime:#b9ff7a;
+  --cyan:#3df0ff;
+  --mag:#ff2ea6;
+  --link:#00b0f4;
+  --ink:#e8f3ec;
+  --soft:#cfe4d6;
+  --muted:#8ea799;
+  --line:rgba(87,242,135,.18);
+  --st:#3ddc84;                       /* màu trạng thái (online) */
 
-        /* Hiệu ứng nền mờ ảo phía sau */
-        .ambient-glow {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(45, 125, 70, 0.25) 0%, rgba(15, 17, 26, 0) 70%);
-            border-radius: 50%;
-            z-index: -1;
-            animation: pulseGlow 6s ease-in-out infinite alternate;
-        }
+  --f-display:'Chakra Petch','Segoe UI',system-ui,sans-serif,'Cambria Math','Noto Sans Math','Segoe UI Symbol';
+  --f-serif:'Cormorant Garamond','Palatino Linotype',Georgia,serif;
+  --f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+}
+body[data-status="idle"]{--st:#f0b232}
+body[data-status="dnd"]{--st:#f23f43}
+body[data-status="offline"]{--st:#80848e}
 
-        @keyframes pulseGlow {
-            0% { transform: scale(0.9); opacity: 0.6; }
-            100% { transform: scale(1.1); opacity: 1; }
-        }
+@property --a{syntax:'<angle>';inherits:false;initial-value:0deg}
 
-        /* Khung Profile Discord chuẩn */
-        .discord-profile {
-            width: 420px;
-            background: #18191c;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            z-index: 10;
-        }
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{
+  min-height:100vh;min-height:100svh;
+  display:grid;place-items:center;
+  padding:clamp(14px,4vw,48px) clamp(12px,3vw,28px);
+  color:var(--ink);background:var(--bg);
+  font-family:var(--f-display);
+  overflow-x:hidden;position:relative;
+}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--neon);outline-offset:3px;border-radius:8px}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+/* nền: ánh rừng + vệt đỏ tím rất nhẹ ở góc dưới (theme của profile Discord) */
+body::before{
+  content:'';position:fixed;inset:0;z-index:-3;
+  background:
+    radial-gradient(900px 620px at 12% -8%,rgba(45,125,70,.40),transparent 62%),
+    radial-gradient(700px 520px at 105% 105%,rgba(255,46,166,.11),transparent 62%),
+    radial-gradient(620px 420px at 50% 125%,rgba(45,125,70,.22),transparent 62%),
+    var(--bg);
+}
+body::after{
+  content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(87,242,135,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(87,242,135,.035) 1px,transparent 1px);
+  background-size:46px 46px;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 10%,transparent 72%);
+          mask-image:radial-gradient(ellipse at 50% 40%,#000 10%,transparent 72%);
+}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 
-        /* Banner Thiên Nhiên */
-        .profile-banner {
-            height: 140px;
-            width: 100%;
-            background: url('https://images.unsplash.com/photo-1511497584788-876761102346?w=800') center/cover no-repeat;
-            position: relative;
-        }
+/* ============================================================
+   MAIN CARD — glassmorphism, viền xanh lá mờ
+   ============================================================ */
+.card{
+  position:relative;width:min(940px,100%);
+  display:grid;gap:clamp(14px,2.4vw,22px);
+  padding:clamp(20px,4vw,44px);
+  border-radius:clamp(26px,4vw,38px);
+  background:
+    radial-gradient(120% 80% at 0% 0%,rgba(45,125,70,.24),transparent 55%),
+    radial-gradient(90% 60% at 100% 100%,rgba(255,46,166,.075),transparent 62%),
+    linear-gradient(160deg,rgba(18,30,25,.62),rgba(10,13,19,.74));
+  -webkit-backdrop-filter:blur(24px) saturate(150%);
+          backdrop-filter:blur(24px) saturate(150%);
+  border:1px solid rgba(87,242,135,.22);
+  box-shadow:
+    0 40px 100px -30px #000,
+    0 0 90px -34px rgba(45,125,70,.9),
+    inset 0 1px 0 rgba(255,255,255,.08),
+    inset 0 0 70px rgba(45,125,70,.06);
+}
+.card>*{min-width:0}
+/* vệt sáng dưới đáy card, giống losxtriz.xyz */
+.card::after{
+  content:'';position:absolute;left:14%;right:14%;bottom:-1px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,transparent,rgba(185,255,122,.95),transparent);
+  opacity:.8;pointer-events:none;
+}
 
-        .banner-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(24,25,28,1));
-        }
+/* một nhịp xuất hiện duy nhất khi tải trang */
+.reveal{animation:rise .9s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0)*110ms + 80ms)}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
 
-        /* Phần chứa Avatar và các nút tương tác */
-        .profile-header-section {
-            padding: 0 16px;
-            position: relative;
-            margin-top: -45px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 12px;
-        }
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;
+  display:grid;grid-template-columns:minmax(0,1fr) 260px;
+  gap:clamp(12px,3vw,32px);align-items:center;
+}
+.hero-text{position:relative;z-index:4;display:grid;gap:14px;justify-items:start}
 
-        .avatar-wrapper {
-            position: relative;
-            width: 90px;
-            height: 90px;
-        }
+.name-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.name{
+  font-weight:700;letter-spacing:.01em;line-height:1.05;
+  font-size:clamp(2.2rem,6.4vw,3.8rem);
+  background:linear-gradient(96deg,#d8ffe5 0%,#57f287 46%,#2fd172 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 16px rgba(87,242,135,.42));
+}
 
-        .avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            border: 6px solid #18191c;
-            object-fit: cover;
-            background-color: #18191c;
-        }
+/* dàn badges dạng viên thuốc */
+.badges{
+  list-style:none;display:flex;gap:2px;padding:5px 8px;border-radius:999px;
+  background:rgba(255,255,255,.04);border:1px solid var(--line);
+  box-shadow:inset 0 0 18px rgba(87,242,135,.07);
+}
+.badges li{
+  width:30px;height:30px;display:grid;place-items:center;border-radius:50%;
+  font-size:17px;cursor:default;position:relative;
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),background .25s;
+}
+.badges li:hover{background:rgba(87,242,135,.16);transform:translateY(-3px) scale(1.14)}
 
-        .status-dot {
-            position: absolute;
-            bottom: 6px;
-            right: 6px;
-            width: 18px;
-            height: 18px;
-            background-color: #3ba55d;
-            border: 3px solid #18191c;
-            border-radius: 50%;
-        }
+[data-tip]{position:relative}
+[data-tip]::after{
+  content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 9px);
+  transform:translate(-50%,4px);white-space:nowrap;pointer-events:none;z-index:30;
+  padding:4px 10px;border-radius:8px;background:#0b140f;border:1px solid var(--line);
+  font:500 .72rem var(--f-mono);color:var(--ink);opacity:0;transition:opacity .2s,transform .2s;
+}
+[data-tip]:hover::after,[data-tip]:focus-visible::after{opacity:1;transform:translate(-50%,0)}
 
-        /* Nút nhắn tin phong cách Discord */
-        .profile-actions {
-            display: flex;
-            gap: 8px;
-        }
+.handle{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;font:500 .95rem var(--f-mono);color:var(--muted)}
+.handle b{font-weight:500;color:var(--ink)}
+.handle .sep{opacity:.35}
+.tag{
+  display:inline-flex;align-items:center;gap:6px;padding:3px 10px 3px 8px;border-radius:8px;
+  background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);
+  font:600 .8rem var(--f-display);letter-spacing:.05em;color:var(--ink);
+  transition:border-color .25s,box-shadow .25s;
+}
+.tag:hover{border-color:rgba(255,228,94,.5);box-shadow:0 0 16px -4px rgba(255,228,94,.5)}
 
-        .discord-btn {
-            background-color: #5865f2;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 14px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: background 0.2s;
-            text-decoration: none;
-        }
+.bio{
+  font-family:var(--f-serif);font-style:italic;font-weight:500;
+  font-size:clamp(1.18rem,2.7vw,1.55rem);line-height:1.5;color:var(--soft);
+  max-width:34ch;min-height:3em;
+}
+.bio a{
+  color:var(--link);text-decoration:none;overflow-wrap:anywhere;
+  background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;
+  transition:background-size .35s ease,text-shadow .3s;
+}
+.bio a:hover{background-size:100% 1px;text-shadow:0 0 14px rgba(0,176,244,.5)}
+.caret{display:inline-block;width:2px;height:1.05em;margin-left:3px;vertical-align:-.16em;background:var(--neon);animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
 
-        .discord-btn:hover {
-            background-color: #4752c4;
-        }
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.ico{
+  width:46px;height:46px;display:grid;place-items:center;cursor:pointer;text-decoration:none;
+  border-radius:14px;color:var(--soft);background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),background .25s,color .25s,box-shadow .3s,border-color .25s;
+}
+.ico svg{width:22px;height:22px;fill:currentColor}
+.ico svg.s,.since svg,.foot svg.s{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ico:hover{
+  transform:translateY(-4px);color:#05140b;background:var(--neon);border-color:transparent;
+  box-shadow:0 12px 30px -8px rgba(87,242,135,.75);
+}
+.since{display:flex;align-items:center;gap:8px;font:400 .82rem var(--f-mono);color:var(--muted)}
+.since svg{width:15px;height:15px}
 
-        .discord-icon-btn {
-            background-color: #2f3136;
-            color: #dcddde;
-            border: none;
-            width: 36px;
-            height: 36px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
+/* ---------- khung ảnh đại diện + quỹ đạo elip ---------- */
+.hero-art{position:relative;z-index:2;width:100%;max-width:260px;aspect-ratio:1;justify-self:center;perspective:900px}
 
-        .discord-icon-btn:hover {
-            background-color: #34373c;
-            color: #fff;
-        }
+.frame{
+  position:absolute;inset:0;z-index:2;overflow:hidden;border-radius:46px;
+  border:1px solid rgba(87,242,135,.38);
+  background:#0a1a10;
+  box-shadow:0 24px 60px -16px rgba(0,0,0,.85),0 0 44px -8px rgba(87,242,135,.42),inset 0 0 0 1px rgba(255,255,255,.05);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s;
+  will-change:transform;
+}
+.hero-art:hover .frame{box-shadow:0 30px 70px -16px rgba(0,0,0,.9),0 0 64px -6px rgba(87,242,135,.6),inset 0 0 0 1px rgba(255,255,255,.08)}
 
-        /* Thân profile */
-        .profile-body {
-            padding: 0 16px 20px 16px;
-        }
+/* banner rừng: ảnh (nếu tải được) phủ lên nền rừng + tia nắng vẽ bằng CSS */
+.forest{
+  position:absolute;inset:0;
+  background:
+    var(--banner,linear-gradient(transparent,transparent)) center/cover no-repeat,
+    radial-gradient(60% 46% at 72% 6%,rgba(255,247,190,.6),transparent 70%),
+    repeating-linear-gradient(100deg,rgba(8,52,22,0) 0 16px,rgba(7,44,19,.6) 16px 25px,rgba(8,52,22,0) 25px 46px),
+    linear-gradient(180deg,#1f7a39 0%,#0f4122 52%,#07170e 100%);
+}
+.forest::before{ /* tia nắng xuyên lá */
+  content:'';position:absolute;inset:0;mix-blend-mode:screen;opacity:.85;
+  background:conic-gradient(from 158deg at 76% -12%,transparent 0 7%,rgba(255,250,200,.34) 9.5%,transparent 13%,rgba(255,250,200,.22) 17%,transparent 21%,rgba(255,250,200,.2) 27%,transparent 33%,transparent 100%);
+  animation:sway 9s ease-in-out infinite alternate;
+}
+@keyframes sway{from{opacity:.55;transform:rotate(-2deg) scale(1.04)}to{opacity:.95;transform:rotate(2deg) scale(1.08)}}
+.forest::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,70,30,.22),rgba(5,16,9,.12) 38%,rgba(4,12,7,.78));
+}
 
-        .username-container {
-            margin-bottom: 12px;
-        }
+.online-tag{
+  position:absolute;left:50%;top:13px;transform:translateX(-50%);z-index:5;
+  padding:4px 14px;border-radius:99px;font:500 .66rem var(--f-mono);letter-spacing:.2em;color:#fff;
+  background:linear-gradient(90deg,rgba(87,242,135,.3),rgba(255,46,166,.42));
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 0 16px rgba(255,46,166,.35);
+}
 
-        .display-name {
-            font-size: 20px;
-            font-weight: 700;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+.avatar{position:absolute;left:50%;top:56%;width:80%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:3}
+.av-ring{
+  position:absolute;inset:15.5%;border-radius:50%;
+  background:conic-gradient(from var(--a),#57f287,#3df0ff,#b9ff7a,#57f287);
+  animation:spinA 7s linear infinite;
+  filter:drop-shadow(0 0 10px rgba(87,242,135,.75));
+}
+@keyframes spinA{to{--a:360deg}}
+.av-core{position:absolute;inset:18%;border-radius:50%;overflow:hidden;background:#0b140f}
+.av-core img,.av-core svg{display:block;width:100%;height:100%;object-fit:cover}
+.deco{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 5px rgba(87,242,135,.85))}
 
-        .display-name span {
-            color: #57f287;
-            text-shadow: 0 0 10px rgba(87, 242, 135, 0.4);
-        }
+.dot{position:absolute;border-radius:50%;background:var(--st);box-shadow:0 0 0 3px #0d1712}
+.dot::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:2px solid var(--st);animation:ping 2.2s ease-out infinite}
+@keyframes ping{from{opacity:.75;transform:scale(.8)}to{opacity:0;transform:scale(1.8)}}
+.avatar .dot{right:19%;bottom:19%;width:12%;aspect-ratio:1}
 
-        .handle-badges {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 4px;
-            font-size: 13px;
-            color: #b9bbbe;
-        }
+.orbit{
+  position:absolute;left:50%;top:50%;pointer-events:none;overflow:visible;
+  width:min(600px,calc(100vw - 24px));aspect-ratio:600/240;
+  transform:translate(-50%,-50%) rotate(-17deg);
+  filter:drop-shadow(0 0 6px rgba(87,242,135,.5));
+}
+.orbit-back{z-index:1}
+.orbit-front{z-index:3}
+.orbit ellipse{fill:none}
+.orbit .comet{stroke-linecap:round;animation:comet 7s linear infinite}
+.orbit .c1{stroke:#e2ffec;stroke-width:2.6;stroke-dasharray:190 1034}
+.orbit .c2{stroke:var(--lime);stroke-width:2;stroke-dasharray:110 1007;animation-duration:9s;animation-direction:reverse}
+@keyframes comet{to{stroke-dashoffset:-1224}}
 
-        .badge-pill {
-            background: #2f3136;
-            padding: 2px 8px;
-            border-radius: 6px;
-            font-size: 12px;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            color: #fff;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
+/* ============================================================
+   TILES (trạng thái + server)
+   ============================================================ */
+.mid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,20px)}
+.tile,.player{
+  position:relative;border-radius:24px;
+  background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.014));
+  border:1px solid rgba(255,255,255,.075);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .35s;
+}
+.tile{display:flex;align-items:center;gap:16px;padding:18px 20px}
+.tile:hover,.player:hover{border-color:rgba(87,242,135,.42);box-shadow:0 20px 44px -20px rgba(87,242,135,.5)}
+.tile:hover{transform:translateY(-4px)}
 
-        .divider {
-            height: 1px;
-            background-color: #2f3136;
-            margin: 16px 0;
-        }
+.mini-av{position:relative;flex:none;width:64px;height:64px}
+.mini-core{width:100%;height:100%;border-radius:50%;overflow:hidden;background:#0b140f;box-shadow:0 0 0 2px rgba(87,242,135,.55),0 0 22px -4px rgba(87,242,135,.5)}
+.mini-core img,.mini-core svg{display:block;width:100%;height:100%;object-fit:cover}
+.mini-av .dot{right:-2px;bottom:-2px;width:19px;height:19px;box-shadow:0 0 0 3px #0f1914}
 
-        /* Phần Tiểu sử (Bio) */
-        .section-title {
-            font-size: 12px;
-            font-weight: 700;
-            color: #8e9297;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
+.tile-txt{display:grid;gap:4px;min-width:0}
+.tile-txt strong{font:600 1.15rem var(--f-display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st{display:flex;align-items:center;gap:8px;font:500 .84rem var(--f-mono);color:var(--st)}
+.st::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--st);box-shadow:0 0 9px var(--st)}
 
-        .bio-text {
-            font-size: 14px;
-            color: #dcddde;
-            line-height: 1.4;
-            word-break: break-word;
-        }
+.srv-ico{
+  flex:none;width:58px;height:58px;border-radius:18px;display:grid;place-items:center;overflow:hidden;font-size:28px;
+  background:radial-gradient(circle at 30% 20%,#57f287,#1c6a3a 60%,#0b2a17);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.2),0 0 24px -4px rgba(87,242,135,.55);
+}
+.srv-ico img{width:100%;height:100%;object-fit:cover;display:block}
+.srv-txt{display:grid;gap:5px;min-width:0;flex:1}
+.srv-txt strong{font:600 1.08rem var(--f-display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stats{display:flex;flex-wrap:wrap;gap:3px 12px;font:400 .74rem var(--f-mono);color:var(--muted)}
+.stats span{display:inline-flex;align-items:center;gap:6px}
+.pip{width:7px;height:7px;border-radius:50%;background:#80848e}
+.pip.on{background:var(--st);box-shadow:0 0 8px var(--st)}
 
-        .bio-text a {
-            color: #00b0f4;
-            text-decoration: none;
-        }
+.join{
+  position:relative;flex:none;overflow:hidden;text-decoration:none;
+  padding:9px 20px;border-radius:12px;font:700 .82rem var(--f-display);letter-spacing:.04em;color:#eafff1;
+  background:linear-gradient(135deg,#2faa5c,#1d7440);border:1px solid rgba(255,255,255,.2);
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,filter .25s;
+}
+.join::before{
+  content:'';position:absolute;top:0;bottom:0;left:-60%;width:40%;transform:skewX(-20deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transition:left .55s ease;
+}
+.join:hover{transform:translateY(-2px);filter:brightness(1.12);box-shadow:0 10px 26px -6px rgba(87,242,135,.7)}
+.join:hover::before{left:130%}
 
-        .bio-text a:hover {
-            text-decoration: underline;
-        }
+/* ============================================================
+   MUSIC PLAYER
+   ============================================================ */
+.player{display:grid;gap:14px;padding:20px clamp(16px,3vw,28px) 22px}
+.p-title{text-align:center;font:italic 600 1.4rem var(--f-serif);letter-spacing:.02em;color:#e7f6ec}
+.p-title small{display:block;margin-top:2px;font:400 .72rem var(--f-mono);font-style:normal;letter-spacing:.06em;color:var(--muted)}
+.p-main{display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2.4vw,24px);align-items:center}
 
-        .info-row {
-            font-size: 13px;
-            color: #b9bbbe;
-            margin-top: 10px;
-        }
+.vinyl{
+  position:relative;width:92px;aspect-ratio:1;border-radius:50%;flex:none;
+  background:
+    radial-gradient(circle,#0b140f 0 7%,#57f287 8% 23%,#0b140f 24% 28%,transparent 29%),
+    conic-gradient(from 20deg,rgba(255,255,255,.17),transparent 18%,transparent 48%,rgba(255,255,255,.14) 58%,transparent 72%),
+    repeating-radial-gradient(circle,#07090c 0 2px,#12171d 2px 3.5px);
+  box-shadow:0 12px 30px -8px rgba(0,0,0,.85),0 0 0 2px rgba(255,255,255,.05),0 0 30px -6px rgba(87,242,135,.4);
+  animation:spin 6s linear infinite paused;
+  transition:box-shadow .4s;
+}
+.vinyl::after{content:'🐢';position:absolute;inset:0;display:grid;place-items:center;font-size:15px}
+.playing .vinyl{animation-play-state:running;box-shadow:0 12px 30px -8px rgba(0,0,0,.85),0 0 0 2px rgba(87,242,135,.3),0 0 40px -4px rgba(87,242,135,.65)}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-        /* Trình phát nhạc tích hợp */
-        .music-widget {
-            background: #2f3136;
-            border-radius: 8px;
-            padding: 10px 14px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
+.p-ui{display:grid;gap:10px;min-width:0}
+.timeline{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;font:400 .72rem var(--f-mono);color:var(--muted)}
+.bar{position:relative;height:20px;display:flex;align-items:center;cursor:pointer;touch-action:none}
+.bar.live{cursor:default}
+.bar::before{content:'';position:absolute;left:0;right:0;height:3px;border-radius:3px;background:rgba(255,255,255,.13)}
+.fill{position:absolute;left:0;height:3px;width:0;border-radius:3px;background:linear-gradient(90deg,#2d7d46,#57f287);box-shadow:0 0 10px rgba(87,242,135,.6)}
+.knob{position:absolute;left:0;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 10px var(--neon);transform:translateX(-50%) scale(0);transition:transform .2s}
+.bar:not(.live):hover .knob,.bar.drag .knob,.bar:focus-visible .knob{transform:translateX(-50%) scale(1)}
 
-        .music-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+.controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.transport{display:flex;align-items:center;gap:10px}
+.cbtn{
+  width:40px;height:40px;display:grid;place-items:center;cursor:pointer;border-radius:50%;
+  color:#d9eadf;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),background .25s,box-shadow .25s;
+}
+.cbtn svg{width:17px;height:17px;fill:currentColor}
+.cbtn:hover{transform:scale(1.1);background:rgba(87,242,135,.18)}
+.cbtn:active{transform:scale(.93)}
+.cbtn.main{
+  width:54px;height:54px;color:#04110a;border-color:transparent;
+  background:radial-gradient(circle at 30% 20%,#7bffa6,#2d7d46);
+  box-shadow:0 8px 26px -6px rgba(87,242,135,.75);
+}
+.cbtn.main svg{width:20px;height:20px}
+.cbtn.main:hover{background:radial-gradient(circle at 30% 20%,#a4ffc2,#33904f);box-shadow:0 12px 32px -6px rgba(87,242,135,.95)}
+.i-pause{display:none}
+.playing .i-play{display:none}
+.playing .i-pause{display:block}
 
-        .vinyl {
-            width: 36px;
-            height: 36px;
-            background: #111;
-            border-radius: 50%;
-            border: 2px solid #57f287;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: spin 4s linear infinite paused;
-        }
+.vol{display:flex;align-items:center;gap:10px;flex:1;min-width:130px;color:var(--muted)}
+.vol svg{width:18px;height:18px;flex:none}
+.vol input{-webkit-appearance:none;appearance:none;width:100%;height:20px;background:transparent;cursor:pointer}
+.vol input::-webkit-slider-runnable-track{height:3px;border-radius:3px;background:linear-gradient(90deg,var(--neon) var(--v,70%),rgba(255,255,255,.14) var(--v,70%))}
+.vol input::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;margin-top:-4.5px;border-radius:50%;background:#fff;box-shadow:0 0 10px var(--neon)}
+.vol input::-moz-range-track{height:3px;border-radius:3px;background:rgba(255,255,255,.14)}
+.vol input::-moz-range-progress{height:3px;border-radius:3px;background:var(--neon)}
+.vol input::-moz-range-thumb{width:12px;height:12px;border:0;border-radius:50%;background:#fff;box-shadow:0 0 10px var(--neon)}
 
-        .vinyl.playing {
-            animation-play-state: running;
-        }
+.eq{display:flex;align-items:flex-end;gap:3px;height:20px}
+.eq i{width:3px;height:100%;border-radius:2px;background:var(--neon);transform-origin:bottom;transform:scaleY(.2);animation:eq 1s ease-in-out infinite paused}
+.eq i:nth-child(2){animation-duration:.75s;animation-delay:-.3s}
+.eq i:nth-child(3){animation-duration:1.15s;animation-delay:-.6s}
+.eq i:nth-child(4){animation-duration:.9s;animation-delay:-.15s}
+.playing .eq i{animation-play-state:running}
+@keyframes eq{50%{transform:scaleY(1)}}
 
-        .vinyl i {
-            font-size: 12px;
-            color: #57f287;
-        }
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 20px;padding:2px 6px 0;font:400 .8rem var(--f-mono);color:var(--muted)}
+.foot span{display:inline-flex;align-items:center;gap:8px}
+.foot svg{width:14px;height:14px}
+.foot .r{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+.foot .r .div{width:1px;height:14px;background:rgba(255,255,255,.14)}
+#clock{font-variant-numeric:tabular-nums;letter-spacing:.04em}
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+/* ---------- toast ---------- */
+.toast{
+  position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:50;
+  transform:translate(-50%,20px);opacity:0;pointer-events:none;max-width:calc(100vw - 32px);
+  padding:10px 18px;border-radius:12px;font:500 .84rem var(--f-display);color:var(--ink);
+  background:rgba(11,20,15,.92);border:1px solid var(--line);box-shadow:0 14px 40px -10px #000,0 0 24px -8px rgba(87,242,135,.5);
+  transition:opacity .3s,transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
 
-        .song-meta .song-name {
-            font-size: 13px;
-            font-weight: 600;
-            color: #fff;
-        }
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:780px){
+  .hero{grid-template-columns:1fr}
+  .hero-art{order:-1;max-width:230px}
+  .hero-text{justify-items:center;text-align:center}
+  .name-row,.handle,.links,.since{justify-content:center}
+  .bio{max-width:none}
+  .mid{grid-template-columns:1fr}
+  .p-main{grid-template-columns:1fr;justify-items:center}
+  .p-ui{width:100%}
+  .controls{justify-content:center}
+  .vol{flex:1 1 100%}
+}
+@media (max-width:420px){
+  .tile{padding:16px}
+  .join{padding:9px 16px}
+  .foot{justify-content:center}
+}
 
-        .song-meta .song-artist {
-            font-size: 11px;
-            color: #b9bbbe;
-        }
-
-        .music-play-btn {
-            background: #57f287;
-            border: none;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            color: #0c0e14;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            transition: transform 0.2s, background 0.2s;
-        }
-
-        .music-play-btn:hover {
-            background: #3ba55d;
-            transform: scale(1.05);
-        }
-    </style>
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .eq i{transform:scaleY(.5)}
+}
+</style>
 </head>
-<body>
 
-    <div class="ambient-glow"></div>
+<body data-status="online">
 
-    <div class="discord-profile">
-        <!-- Banner -->
-        <div class="profile-banner">
-            <div class="banner-overlay"></div>
-        </div>
+<!-- định nghĩa dùng chung (không hiển thị) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="orbG" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#57f287" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#57f287" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#3df0ff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clipTop"><rect x="-320" y="-130" width="640" height="130"/></clipPath>
+    <clipPath id="clipBot"><rect x="-320" y="0" width="640" height="130"/></clipPath>
 
-        <!-- Header: Avatar & Nút tương tác -->
-        <div class="profile-header-section">
-            <div class="avatar-wrapper">
-                <!-- Thay link ảnh avatar rùa đội headphone của bạn vào đây -->
-                <img src="https://cdn.discordapp.com/avatars/1220291333982257255/a_f8ae12a398e5d2ae2cd88cbaffa65af7.gif?size=1024" alt="Avatar" class="avatar">
-                <div class="status-dot"></div>
-            </div>
-            <div class="profile-actions">
-                <a href="https://discord.com/channels/@me" target="_blank" class="discord-btn">
-                    <i class="fa-solid fa-message"></i> Tin nhắn
-                </a>
-                <button class="discord-icon-btn" title="Thêm bạn">
-                    <i class="fa-solid fa-user-plus"></i>
-                </button>
-            </div>
-        </div>
+    <!-- Avatar rùa xanh dự phòng (dùng khi chưa có ảnh avatar thật) -->
+    <symbol id="turtle" viewBox="0 0 120 120">
+      <defs>
+        <radialGradient id="tbg" cx="50%" cy="35%" r="80%">
+          <stop offset="0" stop-color="#1f5f33"/><stop offset="1" stop-color="#08170d"/>
+        </radialGradient>
+      </defs>
+      <rect width="120" height="120" fill="url(#tbg)"/>
+      <ellipse cx="60" cy="84" rx="38" ry="30" fill="#6ec02f"/>
+      <g fill="none" stroke="#2f6b1f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M60 68l11 6.5v13L60 94l-11-6.5v-13z"/>
+        <path d="M60 68V58M71 74.5l9-5M71 87.5l9 5M60 94v8M49 87.5l-9 5M49 74.5l-9-5"/>
+      </g>
+      <ellipse cx="33" cy="104" rx="12" ry="7.5" fill="#d4ee7a"/>
+      <ellipse cx="87" cy="104" rx="12" ry="7.5" fill="#d4ee7a"/>
+      <ellipse cx="60" cy="52" rx="25" ry="21.5" fill="#d4ee7a"/>
+      <circle cx="50.5" cy="50" r="4.4" fill="#10210f"/><circle cx="69.5" cy="50" r="4.4" fill="#10210f"/>
+      <circle cx="52" cy="48.4" r="1.5" fill="#fff"/><circle cx="71" cy="48.4" r="1.5" fill="#fff"/>
+      <ellipse cx="43" cy="60" rx="5" ry="3" fill="#ff9fb0" opacity=".55"/>
+      <ellipse cx="77" cy="60" rx="5" ry="3" fill="#ff9fb0" opacity=".55"/>
+      <path d="M54 59.5q6 6 12 0" fill="none" stroke="#10210f" stroke-width="2.2" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
 
-        <!-- Nội dung chính -->
-        <div class="profile-body">
-            <div class="username-container">
-                <div class="display-name">
-                    Rùa <span>[[√a p p]]</span>
-                </div>
-                <div class="handle-badges">
-                    <span>carlbot1632</span>
-                    <span class="badge-pill">🐢</span>
-                    <span class="badge-pill" style="color: #fEE75C;"><i class="fa-solid fa-bolt"></i> CAFE</span>
-                    <span class="badge-pill"><i class="fa-solid fa-code"></i></span>
-                </div>
-            </div>
+<canvas id="fx" aria-hidden="true"></canvas>
 
-            <div class="divider"></div>
+<main>
+<article class="card">
 
-            <!-- Tiểu sử -->
-            <div>
-                <div class="section-title">Tiểu sử</div>
-                <div class="bio-text">
-                    Ae chs ma sói thì vô link này nhé: <br>
-                    <a href="https://discord.gg/pFtdKqzMrT" target="_blank">https://discord.gg/pFtdKqzMrT</a>
-                </div>
-                <div class="info-row">
-                    <i class="fa-solid fa-calendar-days" style="margin-right: 4px;"></i> Gia Nhập Từ: 21 thg 3, 2024
-                </div>
-            </div>
+  <!-- ===================== HERO ===================== -->
+  <header class="hero reveal" style="--i:0">
+    <div class="hero-text">
+      <div class="name-row">
+        <h1 class="name">Rùa ⟦√a p p⟧</h1>
+        <ul class="badges" aria-label="Huy hiệu">
+          <li data-tip="Coder" tabindex="0">💻</li>
+          <li data-tip="Python" tabindex="0">🐍</li>
+          <li data-tip="Maker" tabindex="0">⚙️</li>
+        </ul>
+      </div>
 
-            <!-- Trình phát nhạc nền -->
-            <div class="music-widget">
-                <div class="music-left">
-                    <div class="vinyl" id="vinylDisc">
-                        <i class="fa-solid fa-compact-disc"></i>
-                    </div>
-                    <div class="song-meta">
-                        <div class="song-name">Lofi Chill Beats</div>
-                        <div class="song-artist">Background Music</div>
-                    </div>
-                </div>
-                <button class="music-play-btn" id="playBtn" onclick="toggleMusic()">
-                    <i class="fa-solid fa-play" id="playIcon"></i>
-                </button>
-            </div>
-        </div>
+      <p class="handle">
+        <b>carlbot1632</b><span class="sep">•</span><span>🐢</span><span class="sep">•</span>
+        <span class="tag" data-tip="Guild tag" tabindex="0">⚡ CAFE</span>
+      </p>
+
+      <p class="bio" aria-live="off">
+        <span id="bioText">Ae chs ma sói thì vô link này nhé: </span><a id="bioLink" href="https://discord.gg/t2qmbTBrQz" target="_blank" rel="noopener noreferrer">https://discord.gg/pFtdKqzMrT</a><span class="caret" aria-hidden="true"></span>
+      </p>
+
+      <div class="links">
+        <button class="ico" id="btnDiscord" type="button" aria-label="Sao chép username Discord" data-tip="Sao chép username">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5.5 5.5c1.6-.9 3.3-1.4 5-1.5l.5 1.1h2l.5-1.1c1.7.1 3.4.6 5 1.5 2.3 3.4 3.2 7 3 10.8-1.8 1.4-3.6 2.2-5.4 2.7l-.9-1.5c-2 .6-4.4.6-6.4 0l-.9 1.5c-1.8-.5-3.6-1.3-5.4-2.7-.2-3.8.7-7.4 3-10.8z"/>
+            <circle cx="9" cy="12.3" r="1.7" fill="#0f111a"/><circle cx="15" cy="12.3" r="1.7" fill="#0f111a"/>
+          </svg>
+        </button>
+        <a class="ico" id="btnWeb" href="#" aria-label="Trang web" data-tip="Sao chép link trang">
+          <svg class="s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3.2 3.2 3.2 14.8 0 18M12 3c-3.2 3.2-3.2 14.8 0 18"/></svg>
+        </a>
+        <a class="ico" id="srvLink" href="https://discord.gg/t2qmbTBrQz" target="_blank" rel="noopener noreferrer" aria-label="My Server" data-tip="My Server">
+          <svg class="s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.2c2.6.3 4.5 2.5 4.5 5.3"/></svg>
+        </a>
+      </div>
+
+      <p class="since">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+        Gia nhập từ 21 thg 3, 2024
+      </p>
     </div>
 
-    <!-- Thẻ Audio -->
-    <audio id="bgAudio" loop>
-        <source src="https://www.bensound.com/bensound-music/bensound-lofi.mp3" type="audio/mp3">
-    </audio>
+    <!-- khung ảnh + quỹ đạo -->
+    <div class="hero-art" id="art">
+      <svg class="orbit orbit-back" viewBox="-300 -120 600 240" aria-hidden="true">
+        <g clip-path="url(#clipTop)">
+          <ellipse rx="285" ry="72" stroke="url(#orbG)" stroke-width="1.4"/>
+          <ellipse rx="262" ry="62" stroke="rgba(87,242,135,.22)" stroke-width="1"/>
+          <ellipse rx="308" ry="86" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+          <ellipse class="comet c1" rx="285" ry="72"/>
+          <ellipse class="comet c2" rx="262" ry="62"/>
+        </g>
+      </svg>
 
-    <script>
-        const audio = document.getElementById('bgAudio');
-        const playBtn = document.getElementById('playIcon');
-        const vinyl = document.getElementById('vinylDisc');
+      <div class="frame" id="frame">
+        <div class="forest" id="forest"></div>
+        <span class="online-tag">0NL1N3</span>
+        <div class="avatar">
+          <div class="av-ring"></div>
+          <div class="av-core av-slot"><svg viewBox="0 0 120 120" role="img" aria-label="Avatar rùa"><use href="#turtle"/></svg></div>
+          <svg class="deco" viewBox="0 0 200 200" aria-hidden="true">
+            <path d="M24 118C22 -4 178 -4 176 118" fill="none" stroke="#57f287" stroke-width="5" stroke-linecap="round"/>
+            <path d="M34 112C34 14 166 14 166 112" fill="none" stroke="#3df0ff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+            <rect x="91" y="21" width="18" height="5" rx="2.5" fill="#b9ff7a"/>
+            <rect x="10" y="96" width="24" height="56" rx="11" fill="#0c1b12" stroke="#57f287" stroke-width="2"/>
+            <rect x="166" y="96" width="24" height="56" rx="11" fill="#0c1b12" stroke="#57f287" stroke-width="2"/>
+            <rect x="17" y="108" width="10" height="32" rx="5" fill="#57f287" opacity=".4"/>
+            <rect x="173" y="108" width="10" height="32" rx="5" fill="#57f287" opacity=".4"/>
+          </svg>
+          <span class="dot"></span>
+        </div>
+      </div>
 
-        function toggleMusic() {
-            if (audio.paused) {
-                audio.play();
-                playBtn.classList.remove('fa-play');
-                playBtn.classList.add('fa-pause');
-                vinyl.classList.add('playing');
-            } else {
-                audio.pause();
-                playBtn.classList.remove('fa-pause');
-                playBtn.classList.add('fa-play');
-                vinyl.classList.remove('playing');
-            }
-        }
-    </script>
+      <svg class="orbit orbit-front" viewBox="-300 -120 600 240" aria-hidden="true">
+        <g clip-path="url(#clipBot)">
+          <ellipse rx="285" ry="72" stroke="url(#orbG)" stroke-width="1.4"/>
+          <ellipse rx="262" ry="62" stroke="rgba(87,242,135,.22)" stroke-width="1"/>
+          <ellipse rx="308" ry="86" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+          <ellipse class="comet c1" rx="285" ry="72"/>
+          <ellipse class="comet c2" rx="262" ry="62"/>
+        </g>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ===================== STATUS + SERVER ===================== -->
+  <section class="mid reveal" style="--i:1" aria-label="Trạng thái và server">
+    <article class="tile">
+      <div class="mini-av">
+        <div class="mini-core av-slot"><svg viewBox="0 0 120 120" role="img" aria-label="Avatar"><use href="#turtle"/></svg></div>
+        <span class="dot"></span>
+      </div>
+      <div class="tile-txt">
+        <strong>carlbot1632</strong>
+        <span class="st" id="stText">Online</span>
+      </div>
+    </article>
+
+    <article class="tile">
+      <div class="srv-ico" id="srvIco" aria-hidden="true">🐺</div>
+      <div class="srv-txt">
+        <strong id="srvName">My Server</strong>
+        <div class="stats" id="srvStats"><span>Join để nhận được nhiều thứ hay ho</span></div>
+      </div>
+      <a class="join" id="joinBtn" href="https://discord.gg/t2qmbTBrQz" target="_blank" rel="noopener noreferrer">Join</a>
+    </article>
+  </section>
+
+  <!-- ===================== MUSIC PLAYER ===================== -->
+  <section class="player reveal" style="--i:2" id="player" aria-label="Trình phát nhạc">
+    <div class="p-title"><span id="pTitle">—</span><small id="pArtist"></small></div>
+
+    <div class="p-main">
+      <div class="vinyl" aria-hidden="true"></div>
+
+      <div class="p-ui">
+        <div class="timeline">
+          <span id="tCur">0:00</span>
+          <div class="bar live" id="bar" role="slider" tabindex="0" aria-label="Tua nhạc" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="fill" id="fill"></div><div class="knob" id="knob"></div>
+          </div>
+          <span id="tDur">0:00</span>
+        </div>
+
+        <div class="controls">
+          <div class="transport">
+            <button class="cbtn" id="prev" type="button" aria-label="Bài trước">
+              <svg viewBox="0 0 24 24"><rect x="5" y="5" width="2.4" height="14" rx="1"/><path d="M19 5.5v13L8.5 12z"/></svg>
+            </button>
+            <button class="cbtn main" id="toggle" type="button" aria-label="Phát nhạc">
+              <svg class="i-play" viewBox="0 0 24 24"><path d="M8 5.2v13.6l11-6.8z"/></svg>
+              <svg class="i-pause" viewBox="0 0 24 24"><rect x="6.5" y="5" width="4" height="14" rx="1.3"/><rect x="13.5" y="5" width="4" height="14" rx="1.3"/></svg>
+            </button>
+            <button class="cbtn" id="next" type="button" aria-label="Bài tiếp theo">
+              <svg viewBox="0 0 24 24"><path d="M5 5.5v13L15.5 12z"/><rect x="16.6" y="5" width="2.4" height="14" rx="1"/></svg>
+            </button>
+          </div>
+
+          <div class="vol">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5l4.5 4v-13l-4.5 4z" fill="currentColor"/><path d="M15.5 9a4 4 0 010 6M18 6.5a8 8 0 010 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <input id="vol" type="range" min="0" max="100" value="70" aria-label="Âm lượng">
+          </div>
+
+          <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="foot reveal" style="--i:3">
+    <span>
+      <svg class="s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <span id="clock">--:--:--</span>
+    </span>
+    <span class="r">
+      <span><svg class="s" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span id="views">0</span></span>
+      <i class="div" aria-hidden="true"></i>
+      <span><svg class="s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span id="loc">Việt Nam</span></span>
+    </span>
+  </footer>
+
+</article>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+'use strict';
+
+/* ============================================================
+   CẤU HÌNH — chỉnh ở đây là đủ
+   ============================================================ */
+const CONFIG = {
+  username   : 'carlbot1632',
+  inviteCode : 't2qmbTBrQz',            // mã invite server Ma Sói (phân biệt hoa/thường)
+  status     : 'online',                // online | idle | dnd | offline
+  discordId  : '1220291333982257255',                      // (tuỳ chọn) ID Discord để tự cập nhật trạng thái qua Lanyard
+  website    : '',                      // (tuỳ chọn) link web riêng; để trống = nút Web sẽ sao chép link trang này
+  location   : 'Việt Nam',
+  timezone   : 'Asia/Ho_Chi_Minh',
+  avatarUrl  : 'https://cdn.discordapp.com/avatars/1220291333982257255/a_f8ae12a398e5d2ae2cd88cbaffa65af7.gif?size=256',
+  bannerUrl  : 'https://images.unsplash.com/photo-1511497584788-876761102346?w=900&q=80',
+  // Thêm nhạc của bạn (file .mp3/.ogg cùng thư mục hoặc link trực tiếp). Bài đặt ở đây sẽ phát trước nhạc tích hợp.
+  tracks     : [
+    // { title: 'Tên bài', artist: 'Nghệ sĩ', src: 'music/lofi.mp3' },
+  ],
+};
+
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const sleep  = ms => new Promise(r => setTimeout(r, ms));
+const clamp  = (v, a, b) => Math.min(b, Math.max(a, v));
+
+/* ---------- toast + clipboard ---------- */
+const $toast = $('#toast'); let toastT;
+function toast(msg){
+  $toast.textContent = msg; $toast.classList.add('show');
+  clearTimeout(toastT); toastT = setTimeout(() => $toast.classList.remove('show'), 2400);
+}
+async function copy(text, okMsg){
+  try { await navigator.clipboard.writeText(text); toast(okMsg); }
+  catch { toast('Không sao chép được — ' + text); }
+}
+
+/* ============================================================
+   ÁP DỤNG CẤU HÌNH
+   ============================================================ */
+const inviteUrl = `https://discord.gg/${CONFIG.inviteCode}`;
+$('#bioLink').href = inviteUrl; $('#bioLink').textContent = inviteUrl;
+$('#joinBtn').href = inviteUrl; $('#srvLink').href = inviteUrl;
+$('#loc').textContent = CONFIG.location;
+if (CONFIG.bannerUrl) $('#forest').style.setProperty('--banner', `url("${CONFIG.bannerUrl}")`);
+
+const STATUS_TEXT = { online:'Online', idle:'Vắng mặt', dnd:'Đừng làm phiền', offline:'Offline' };
+function setStatus(s){
+  if (!STATUS_TEXT[s]) return;
+  document.body.dataset.status = s; $('#stText').textContent = STATUS_TEXT[s];
+}
+setStatus(CONFIG.status);
+
+/* avatar thật (nếu tải được thì thay hình rùa vẽ sẵn) */
+if (CONFIG.avatarUrl){
+  const im = new Image(); im.alt = 'Avatar của Rùa'; im.decoding = 'async'; im.referrerPolicy = 'no-referrer';
+  im.onload = () => $$('.av-slot').forEach(slot => slot.replaceChildren(im.cloneNode()));
+  im.src = CONFIG.avatarUrl;
+}
+
+/* nút icon */
+$('#btnDiscord').addEventListener('click', () => copy(CONFIG.username, `Đã sao chép: ${CONFIG.username}`));
+const $web = $('#btnWeb');
+if (CONFIG.website){
+  $web.href = CONFIG.website; $web.target = '_blank'; $web.rel = 'noopener noreferrer'; $web.dataset.tip = 'Trang web';
+} else {
+  $web.addEventListener('click', e => { e.preventDefault(); copy(location.href, 'Đã sao chép link trang'); });
+}
+
+/* ============================================================
+   TRẠNG THÁI DISCORD (Lanyard — tuỳ chọn)
+   ============================================================ */
+async function lanyard(){
+  try {
+    const r = await fetch(`https://api.lanyard.rest/v0/users/${CONFIG.discordId}`);
+    const j = await r.json();
+    if (j.success) setStatus(j.data.discord_status);
+  } catch {}
+}
+if (CONFIG.discordId){ lanyard(); setInterval(lanyard, 30000); }
+
+/* ============================================================
+   SERVER MA SÓI — lấy tên, icon, số thành viên từ invite
+   ============================================================ */
+(async function loadServer(){
+  try {
+    const r = await fetch(`https://discord.com/api/v9/invites/${encodeURIComponent(CONFIG.inviteCode)}?with_counts=true`);
+    if (!r.ok) throw new Error(r.status);
+    const d = await r.json(), g = d.guild || {};
+    if (g.name) $('#srvName').textContent = g.name;
+    if (g.id && g.icon){
+      const im = new Image(); im.alt = '';
+      im.onload = () => $('#srvIco').replaceChildren(im);
+      im.src = `https://cdn.discordapp.com/icons/${g.id}/${g.icon}.png?size=128`;
+    }
+    const nf = new Intl.NumberFormat('vi-VN');
+    if (Number.isFinite(d.approximate_member_count)){
+      const on = Number.isFinite(d.approximate_presence_count) ? `<span><i class="pip on"></i>${nf.format(d.approximate_presence_count)} Online</span>` : '';
+      $('#srvStats').innerHTML = `${on}<span><i class="pip"></i>${nf.format(d.approximate_member_count)} Members</span>`;
+    }
+  } catch { /* giữ nguyên dòng mô tả mặc định */ }
+})();
+
+/* ============================================================
+   BIO — gõ chữ
+   ============================================================ */
+(async function typeBio(){
+  if (reduce) return;
+  const a = $('#bioText'), l = $('#bioLink');
+  const t1 = a.textContent, t2 = l.textContent;
+  a.textContent = ''; l.textContent = '';
+  await sleep(700);
+  for (const ch of t1){ a.textContent += ch; await sleep(30); }
+  for (const ch of t2){ l.textContent += ch; await sleep(16); }
+})();
+
+/* ============================================================
+   ĐỒNG HỒ + LƯỢT XEM
+   ============================================================ */
+(function clock(){
+  let f;
+  try { f = new Intl.DateTimeFormat('en-GB', { hour:'2-digit', minute:'2-digit', second:'2-digit', hourCycle:'h23', timeZone:CONFIG.timezone }); }
+  catch { f = new Intl.DateTimeFormat('en-GB', { hour:'2-digit', minute:'2-digit', second:'2-digit', hourCycle:'h23' }); }
+  const el = $('#clock');
+  const tick = () => { el.textContent = f.format(new Date()); };
+  tick(); setInterval(tick, 1000);
+})();
+
+(function views(){
+  /* Đếm theo trình duyệt (localStorage). Muốn số lượt xem thật cho mọi người, thay bằng API của dịch vụ đếm bạn dùng. */
+  let n = 0;
+  try {
+    n = parseInt(localStorage.getItem('rua_views') || '0', 10) || 0;
+    if (!sessionStorage.getItem('rua_counted')){ n++; localStorage.setItem('rua_views', n); sessionStorage.setItem('rua_counted', '1'); }
+  } catch { n = 1; }
+  $('#views').textContent = n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : n;
+})();
+
+/* ============================================================
+   HIỆU ỨNG: đom đóm (canvas) + nghiêng khung ảnh
+   ============================================================ */
+(function fireflies(){
+  const cv = $('#fx'), c = cv.getContext('2d');
+  let W, H, dpr, P = [];
+  const COLORS = ['87,242,135','87,242,135','87,242,135','185,255,122','61,240,255'];
+  function size(){
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    W = cv.width = Math.round(innerWidth * dpr); H = cv.height = Math.round(innerHeight * dpr);
+    const n = Math.round(Math.min(52, innerWidth / 28));
+    P = Array.from({ length:n }, () => ({
+      x:Math.random()*W, y:Math.random()*H, r:(1 + Math.random()*2) * dpr,
+      vx:(Math.random() - .5) * .25 * dpr, vy:-(.05 + Math.random()*.28) * dpr,
+      ph:Math.random()*6.28, sp:.6 + Math.random()*1.3, c:COLORS[Math.floor(Math.random()*COLORS.length)],
+    }));
+  }
+  function draw(ts){
+    const t = ts / 1000;
+    c.clearRect(0, 0, W, H);
+    for (const p of P){
+      if (!reduce){
+        p.x += p.vx + Math.sin(t*p.sp + p.ph) * .25 * dpr; p.y += p.vy;
+        if (p.y < -30) p.y = H + 30; if (p.x < -30) p.x = W + 30; if (p.x > W + 30) p.x = -30;
+      }
+      const a = .12 + .88 * Math.pow(Math.max(0, Math.sin(t*p.sp + p.ph)), 2);
+      const g = c.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r*7);
+      g.addColorStop(0, `rgba(${p.c},${a})`); g.addColorStop(1, `rgba(${p.c},0)`);
+      c.fillStyle = g; c.beginPath(); c.arc(p.x, p.y, p.r*7, 0, 6.2832); c.fill();
+    }
+  }
+  function loop(ts){ if (!document.hidden) draw(ts); requestAnimationFrame(loop); }
+  size(); addEventListener('resize', size);
+  if (reduce) draw(0); else requestAnimationFrame(loop);
+})();
+
+(function tilt(){
+  if (reduce || !matchMedia('(hover:hover)').matches) return;
+  const art = $('#art'), frame = $('#frame');
+  art.addEventListener('pointermove', e => {
+    const r = art.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    frame.style.transform = `rotateY(${x*14}deg) rotateX(${-y*14}deg) scale(1.03)`;
+  });
+  art.addEventListener('pointerleave', () => { frame.style.transform = ''; });
+})();
+
+/* ============================================================
+   NHẠC LOFI TÍCH HỢP (Web Audio) — luôn phát được, không cần file
+   ============================================================ */
+const PRESETS = [
+  { title:'Rừng sau mưa', artist:'Lofi tích hợp · 72 BPM', bpm:72,
+    chords:[{notes:[53,57,60,64],bass:38},{notes:[59,62,65,69],bass:43},{notes:[52,55,59,62],bass:36},{notes:[60,64,67,71],bass:45}],
+    scale:[62,65,67,69,72,74,77] },
+  { title:'Sương mai', artist:'Lofi tích hợp · 66 BPM', bpm:66,
+    chords:[{notes:[53,57,60,64],bass:41},{notes:[52,55,59,62],bass:40},{notes:[53,57,60,65],bass:38},{notes:[52,55,59,64],bass:36}],
+    scale:[60,62,64,67,69,72,74] },
+  { title:'Đom đóm', artist:'Lofi tích hợp · 78 BPM', bpm:78,
+    chords:[{notes:[55,60,64,67],bass:45},{notes:[57,60,64,67],bass:41},{notes:[52,55,59,62],bass:36},{notes:[59,62,64,69],bass:43}],
+    scale:[57,60,62,64,67,69,72] },
+];
+
+const Synth = (() => {
+  let ctx, master, lp, comp, fxIn, delay, noiseBuf, timer;
+  let step = 0, nextTime = 0, t0 = 0, vol = .7, preset = null;
+  const mtof = m => 440 * Math.pow(2, (m - 69) / 12);
+  const eighth = () => 60 / preset.bpm / 2;
+
+  function init(){
+    if (ctx) return;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) throw new Error('Web Audio không được hỗ trợ');
+    ctx = new AC();
+    master = ctx.createGain(); master.gain.value = vol * .9;
+    comp = ctx.createDynamicsCompressor();
+    comp.threshold.value = -20; comp.ratio.value = 4; comp.attack.value = .01; comp.release.value = .25;
+    lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 3000; lp.Q.value = .6;
+    lp.connect(comp); comp.connect(master); master.connect(ctx.destination);
+
+    fxIn = ctx.createGain(); fxIn.connect(lp);                       // echo mơ màng cho giai điệu
+    delay = ctx.createDelay(2);
+    const fb = ctx.createGain(); fb.gain.value = .34;
+    const wet = ctx.createGain(); wet.gain.value = .38;
+    fxIn.connect(delay); delay.connect(fb); fb.connect(delay); delay.connect(wet); wet.connect(lp);
+
+    noiseBuf = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate);
+    const nd = noiseBuf.getChannelData(0);
+    for (let i = 0; i < nd.length; i++) nd[i] = Math.random() * 2 - 1;
+
+    const len = ctx.sampleRate * 4, cb = ctx.createBuffer(1, len, ctx.sampleRate), cd = cb.getChannelData(0);   // tiếng đĩa than
+    for (let i = 0; i < len; i++) cd[i] = (Math.random() < .0006 ? (Math.random()*2 - 1) * .9 : 0) + (Math.random()*2 - 1) * .012;
+    const cs = ctx.createBufferSource(); cs.buffer = cb; cs.loop = true;
+    const hp = ctx.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 1500;
+    const cg = ctx.createGain(); cg.gain.value = .16;
+    cs.connect(hp); hp.connect(cg); cg.connect(comp); cs.start();
+    apply();
+  }
+  function apply(){
+    if (!ctx || !preset) return;
+    delay.delayTime.value = 60 / preset.bpm * .75;
+    step = 0; nextTime = ctx.currentTime + .1; t0 = ctx.currentTime;
+  }
+
+  function note(f, t, dur, vel, type, dest, detune){
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = type || 'triangle'; o.frequency.value = f; if (detune) o.detune.value = detune;
+    g.gain.setValueAtTime(.0001, t);
+    g.gain.exponentialRampToValueAtTime(vel, t + .018);
+    g.gain.exponentialRampToValueAtTime(Math.max(vel * .35, .0002), t + dur * .5);
+    g.gain.exponentialRampToValueAtTime(.0001, t + dur);
+    o.connect(g); g.connect(dest || lp);
+    o.start(t); o.stop(t + dur + .05);
+  }
+  function noise(t, dur){
+    const s = ctx.createBufferSource(); s.buffer = noiseBuf;
+    s.start(t, Math.random() * 1.5, dur + .05); return s;
+  }
+  function kick(t, v){
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.frequency.setValueAtTime(130, t); o.frequency.exponentialRampToValueAtTime(42, t + .14);
+    g.gain.setValueAtTime(.7 * v, t); g.gain.exponentialRampToValueAtTime(.001, t + .32);
+    o.connect(g); g.connect(lp); o.start(t); o.stop(t + .35);
+  }
+  function snare(t, v){
+    const s = noise(t, .2), f = ctx.createBiquadFilter(), g = ctx.createGain();
+    f.type = 'bandpass'; f.frequency.value = 1700; f.Q.value = .7;
+    g.gain.setValueAtTime(.26 * v, t); g.gain.exponentialRampToValueAtTime(.001, t + .2);
+    s.connect(f); f.connect(g); g.connect(lp);
+    note(180, t, .12, .1 * v, 'triangle', lp);
+  }
+  function hat(t, v){
+    const s = noise(t, .05), f = ctx.createBiquadFilter(), g = ctx.createGain();
+    f.type = 'bandpass'; f.frequency.value = 6000; f.Q.value = .8;
+    g.gain.setValueAtTime(.06 * v, t); g.gain.exponentialRampToValueAtTime(.001, t + .05);
+    s.connect(f); f.connect(g); g.connect(comp);
+  }
+
+  function playStep(s, t){
+    const sd = eighth(), ch = preset.chords[Math.floor(s / 16) % preset.chords.length];
+    const cs = s % 16, bs = s % 8;
+
+    const hits = { 0:1, 6:.62, 8:.8, 14:.5 };                         // đàn phím kiểu Rhodes
+    if (hits[cs] !== undefined){
+      ch.notes.forEach((m, k) => {
+        const f = mtof(m), tt = t + k * .012, d = sd * (cs === 0 ? 6 : 3.2);
+        note(f, tt, d, .045 * hits[cs], 'triangle', lp, k % 2 ? 6 : -6);
+        note(f * 2, tt, sd * 1.5, .008 * hits[cs], 'sine', lp);
+      });
+    }
+    if (cs === 0 || cs === 8 || cs === 14){                            // bass
+      const d = sd * (cs === 14 ? 1.6 : 5), v = cs === 14 ? .15 : .22;
+      note(mtof(ch.bass), t, d, v, 'sine', lp);
+      note(mtof(ch.bass) * 2, t, d, v * .16, 'triangle', lp);
+    }
+    if (bs === 0 || bs === 5) kick(t, bs === 0 ? 1 : .7);
+    if (bs === 2 || bs === 6) snare(t, .9);
+    if (Math.random() > .12) hat(t, (s % 2 ? .5 : .8) * (.7 + Math.random() * .3));
+
+    if ([2, 4, 7, 10, 12].includes(cs) && Math.random() < .32){        // giai điệu ngẫu hứng
+      const f = mtof(preset.scale[Math.floor(Math.random() * preset.scale.length)]);
+      note(f, t, sd * 3, .05, 'sine', fxIn);
+      note(f, t, sd * 3, .028, 'triangle', lp);
+    }
+  }
+  function tick(){
+    if (!ctx || ctx.state !== 'running' || !preset) return;
+    while (nextTime < ctx.currentTime + .5){
+      const sd = eighth();
+      playStep(step, nextTime + (step % 2 ? sd * .16 : 0));            // swing nhẹ
+      nextTime += sd; step++;
+    }
+  }
+
+  return {
+    setPreset(p){ preset = p; apply(); },
+    async play(){
+      init();
+      if (ctx.state !== 'running') await ctx.resume();
+      if (!timer) timer = setInterval(tick, 100);
+      tick();
+    },
+    pause(){ if (ctx && ctx.state === 'running') ctx.suspend(); },
+    setVolume(v){ vol = v; if (master) master.gain.setTargetAtTime(v * .9, ctx.currentTime, .03); },
+    time(){ return ctx ? Math.max(0, ctx.currentTime - t0) : 0; },
+    loopPct(){
+      if (!preset) return 0;
+      const L = preset.chords.length * 16 * eighth();
+      return (this.time() % L) / L;
+    },
+  };
+})();
+
+/* ============================================================
+   TRÌNH PHÁT NHẠC
+   ============================================================ */
+const tracks = [
+  ...CONFIG.tracks.map(t => ({ ...t })),
+  ...PRESETS.map(p => ({ title:p.title, artist:p.artist, preset:p })),
+];
+const $player = $('#player'), $bar = $('#bar'), $fill = $('#fill'), $knob = $('#knob');
+const $tCur = $('#tCur'), $tDur = $('#tDur'), $toggle = $('#toggle'), $vol = $('#vol');
+const audio = new Audio(); audio.preload = 'none';
+let idx = 0, playing = false, fails = 0, vol = .7, seeking = false;
+
+const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+
+function setPlaying(b){
+  playing = b;
+  $player.classList.toggle('playing', b);
+  $toggle.setAttribute('aria-label', b ? 'Tạm dừng' : 'Phát nhạc');
+}
+function pauseAll(){ audio.pause(); Synth.pause(); setPlaying(false); }
+
+function loadTrack(i, resume){
+  pauseAll();
+  idx = (i + tracks.length) % tracks.length;
+  const t = tracks[idx];
+  $('#pTitle').textContent = t.title;
+  $('#pArtist').textContent = t.artist || '';
+  $bar.classList.toggle('live', !t.src);
+  if (t.src) audio.src = t.src; else Synth.setPreset(t.preset);
+  updateTimeline();
+  try { if ('mediaSession' in navigator) navigator.mediaSession.metadata = new MediaMetadata({ title:t.title, artist:t.artist || CONFIG.username }); } catch {}
+  if (resume) play();
+}
+
+async function play(){
+  const t = tracks[idx];
+  try {
+    if (t.src){ Synth.pause(); await audio.play(); }
+    else { audio.pause(); await Synth.play(); }
+    fails = 0; setPlaying(true);
+  } catch (err){
+    console.warn('[player]', err);
+    if (t.src && fails < tracks.length){ fails++; toast('Không tải được file nhạc — chuyển bài khác'); loadTrack(idx + 1, true); }
+    else toast('Trình duyệt chưa cho phát nhạc — nhấn Play lần nữa');
+  }
+}
+const toggle = () => playing ? pauseAll() : play();
+
+function updateTimeline(){
+  const t = tracks[idx]; let cur = 0, pct = 0;
+  if (t.src){
+    const d = audio.duration; cur = audio.currentTime || 0;
+    pct = isFinite(d) && d > 0 ? cur / d : 0;
+    $tDur.textContent = isFinite(d) ? fmt(d) : '--:--';
+  } else {
+    cur = Synth.time(); pct = Synth.loopPct(); $tDur.textContent = 'LIVE';
+  }
+  $tCur.textContent = fmt(cur);
+  $fill.style.width = $knob.style.left = (pct * 100).toFixed(2) + '%';
+  $bar.setAttribute('aria-valuenow', Math.round(pct * 100));
+}
+setInterval(updateTimeline, 200);
+
+$toggle.addEventListener('click', toggle);
+$('#prev').addEventListener('click', () => loadTrack(idx - 1, playing));
+$('#next').addEventListener('click', () => loadTrack(idx + 1, playing));
+audio.addEventListener('ended', () => loadTrack(idx + 1, true));
+audio.addEventListener('error', () => { if (playing && tracks[idx].src){ toast('File nhạc bị lỗi — chuyển bài khác'); loadTrack(idx + 1, true); } });
+
+/* tua nhạc (chỉ với file nhạc; nhạc tích hợp phát liên tục) */
+function seekTo(e){
+  const t = tracks[idx]; if (!t.src || !isFinite(audio.duration)) return;
+  const r = $bar.getBoundingClientRect();
+  audio.currentTime = clamp((e.clientX - r.left) / r.width, 0, 1) * audio.duration; updateTimeline();
+}
+$bar.addEventListener('pointerdown', e => { seeking = true; $bar.setPointerCapture(e.pointerId); $bar.classList.add('drag'); seekTo(e); });
+$bar.addEventListener('pointermove', e => { if (seeking) seekTo(e); });
+['pointerup', 'pointercancel'].forEach(ev => $bar.addEventListener(ev, () => { seeking = false; $bar.classList.remove('drag'); }));
+$bar.addEventListener('keydown', e => {
+  if (!tracks[idx].src || !isFinite(audio.duration)) return;
+  if (e.key === 'ArrowRight'){ audio.currentTime = Math.min(audio.duration, audio.currentTime + 5); e.preventDefault(); }
+  if (e.key === 'ArrowLeft'){ audio.currentTime = Math.max(0, audio.currentTime - 5); e.preventDefault(); }
+});
+
+/* âm lượng */
+function applyVol(){
+  vol = $vol.value / 100; audio.volume = vol; Synth.setVolume(vol);
+  $vol.style.setProperty('--v', $vol.value + '%');
+}
+$vol.addEventListener('input', applyVol); applyVol();
+
+/* điều khiển từ màn hình khoá / phím media */
+try {
+  if ('mediaSession' in navigator){
+    navigator.mediaSession.setActionHandler('play', play);
+    navigator.mediaSession.setActionHandler('pause', pauseAll);
+    navigator.mediaSession.setActionHandler('previoustrack', () => loadTrack(idx - 1, playing));
+    navigator.mediaSession.setActionHandler('nexttrack', () => loadTrack(idx + 1, playing));
+  }
+} catch {}
+
+loadTrack(0, false);
+})();
+</script>
 </body>
 </html>
