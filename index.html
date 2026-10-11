@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết nối Thành Công!</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .icon {
+            font-size: 64px;
+            color: #2ecc71;
+            margin-bottom: 20px;
+            animation: pop 0.5s ease-out;
+        }
+        h1 {
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+            font-size: 28px;
+        }
+        p {
+            color: #7f8c8d;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        @keyframes pop {
+            0% { transform: scale(0); }
+            80% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="icon">🚀</div>
+        <h1>Thành Công!</h1>
+        <p>Chúc mừng bạn! Subdomain <strong>carlbot.isroot.in</strong> đã kết nối thành công tới Web Server của bạn.</p>
+        <a href="#" class="btn">Bắt đầu ngay</a>
+    </div>
+
+</body>
+</html>
