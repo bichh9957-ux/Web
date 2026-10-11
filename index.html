@@ -3,71 +3,412 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kết nối Thành Công!</title>
+    <title>Rùa [[√a p p]] - Discord Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
+        }
+
+        body {
+            background-color: #0c0e14;
+            color: #dcddde;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            overflow-x: hidden;
+            position: relative;
         }
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            text-align: center;
-            max-width: 400px;
+
+        /* Hiệu ứng nền mờ ảo phía sau */
+        .ambient-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(45, 125, 70, 0.25) 0%, rgba(15, 17, 26, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulseGlow 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(0.9); opacity: 0.6; }
+            100% { transform: scale(1.1); opacity: 1; }
+        }
+
+        /* Khung Profile Discord chuẩn */
+        .discord-profile {
+            width: 420px;
+            background: #18191c;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Banner Thiên Nhiên */
+        .profile-banner {
+            height: 140px;
             width: 100%;
+            background: url('https://images.unsplash.com/photo-1511497584788-876761102346?w=800') center/cover no-repeat;
+            position: relative;
         }
-        .icon {
-            font-size: 64px;
-            color: #2ecc71;
-            margin-bottom: 20px;
-            animation: pop 0.5s ease-out;
+
+        .banner-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(24,25,28,1));
         }
-        h1 {
-            color: #2c3e50;
-            margin: 0 0 10px 0;
-            font-size: 28px;
+
+        /* Phần chứa Avatar và các nút tương tác */
+        .profile-header-section {
+            padding: 0 16px;
+            position: relative;
+            margin-top: -45px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 12px;
         }
-        p {
-            color: #7f8c8d;
-            font-size: 16px;
-            line-height: 1.5;
-            margin-bottom: 25px;
+
+        .avatar-wrapper {
+            position: relative;
+            width: 90px;
+            height: 90px;
         }
-        .btn {
-            background-color: #3498db;
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 6px solid #18191c;
+            object-fit: cover;
+            background-color: #18191c;
+        }
+
+        .status-dot {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            width: 18px;
+            height: 18px;
+            background-color: #3ba55d;
+            border: 3px solid #18191c;
+            border-radius: 50%;
+        }
+
+        /* Nút nhắn tin phong cách Discord */
+        .profile-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .discord-btn {
+            background-color: #5865f2;
             color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.2s;
             text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: bold;
-            display: inline-block;
+        }
+
+        .discord-btn:hover {
+            background-color: #4752c4;
+        }
+
+        .discord-icon-btn {
+            background-color: #2f3136;
+            color: #dcddde;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
             transition: background 0.2s;
         }
-        .btn:hover {
-            background-color: #2980b9;
+
+        .discord-icon-btn:hover {
+            background-color: #34373c;
+            color: #fff;
         }
-        @keyframes pop {
-            0% { transform: scale(0); }
-            80% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+
+        /* Thân profile */
+        .profile-body {
+            padding: 0 16px 20px 16px;
+        }
+
+        .username-container {
+            margin-bottom: 12px;
+        }
+
+        .display-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .display-name span {
+            color: #57f287;
+            text-shadow: 0 0 10px rgba(87, 242, 135, 0.4);
+        }
+
+        .handle-badges {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 4px;
+            font-size: 13px;
+            color: #b9bbbe;
+        }
+
+        .badge-pill {
+            background: #2f3136;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #2f3136;
+            margin: 16px 0;
+        }
+
+        /* Phần Tiểu sử (Bio) */
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #8e9297;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .bio-text {
+            font-size: 14px;
+            color: #dcddde;
+            line-height: 1.4;
+            word-break: break-word;
+        }
+
+        .bio-text a {
+            color: #00b0f4;
+            text-decoration: none;
+        }
+
+        .bio-text a:hover {
+            text-decoration: underline;
+        }
+
+        .info-row {
+            font-size: 13px;
+            color: #b9bbbe;
+            margin-top: 10px;
+        }
+
+        /* Trình phát nhạc tích hợp */
+        .music-widget {
+            background: #2f3136;
+            border-radius: 8px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .music-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .vinyl {
+            width: 36px;
+            height: 36px;
+            background: #111;
+            border-radius: 50%;
+            border: 2px solid #57f287;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: spin 4s linear infinite paused;
+        }
+
+        .vinyl.playing {
+            animation-play-state: running;
+        }
+
+        .vinyl i {
+            font-size: 12px;
+            color: #57f287;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .song-meta .song-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .song-meta .song-artist {
+            font-size: 11px;
+            color: #b9bbbe;
+        }
+
+        .music-play-btn {
+            background: #57f287;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            color: #0c0e14;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .music-play-btn:hover {
+            background: #3ba55d;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <div class="icon">🚀</div>
-        <h1>Thành Công!</h1>
-        <p>Chúc mừng bạn! Subdomain <strong>carlbot.isroot.in</strong> đã kết nối thành công tới Web Server của bạn. Hãy tận hưởng nhé!</p>
-        <a href="#" class="btn">Bắt đầu ngay</a>
+    <div class="ambient-glow"></div>
+
+    <div class="discord-profile">
+        <!-- Banner -->
+        <div class="profile-banner">
+            <div class="banner-overlay"></div>
+        </div>
+
+        <!-- Header: Avatar & Nút tương tác -->
+        <div class="profile-header-section">
+            <div class="avatar-wrapper">
+                <!-- Thay link ảnh avatar rùa đội headphone của bạn vào đây -->
+                <img src="https://cdn.discordapp.com/avatars/1220291333982257255/a_f8ae12a398e5d2ae2cd88cbaffa65af7.gif?size=1024" alt="Avatar" class="avatar">
+                <div class="status-dot"></div>
+            </div>
+            <div class="profile-actions">
+                <a href="https://discord.com/channels/@me" target="_blank" class="discord-btn">
+                    <i class="fa-solid fa-message"></i> Tin nhắn
+                </a>
+                <button class="discord-icon-btn" title="Thêm bạn">
+                    <i class="fa-solid fa-user-plus"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Nội dung chính -->
+        <div class="profile-body">
+            <div class="username-container">
+                <div class="display-name">
+                    Rùa <span>[[√a p p]]</span>
+                </div>
+                <div class="handle-badges">
+                    <span>carlbot1632</span>
+                    <span class="badge-pill">🐢</span>
+                    <span class="badge-pill" style="color: #fEE75C;"><i class="fa-solid fa-bolt"></i> CAFE</span>
+                    <span class="badge-pill"><i class="fa-solid fa-code"></i></span>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Tiểu sử -->
+            <div>
+                <div class="section-title">Tiểu sử</div>
+                <div class="bio-text">
+                    Ae chs ma sói thì vô link này nhé: <br>
+                    <a href="https://discord.gg/pFtdKqzMrT" target="_blank">https://discord.gg/pFtdKqzMrT</a>
+                </div>
+                <div class="info-row">
+                    <i class="fa-solid fa-calendar-days" style="margin-right: 4px;"></i> Gia Nhập Từ: 21 thg 3, 2024
+                </div>
+            </div>
+
+            <!-- Trình phát nhạc nền -->
+            <div class="music-widget">
+                <div class="music-left">
+                    <div class="vinyl" id="vinylDisc">
+                        <i class="fa-solid fa-compact-disc"></i>
+                    </div>
+                    <div class="song-meta">
+                        <div class="song-name">Lofi Chill Beats</div>
+                        <div class="song-artist">Background Music</div>
+                    </div>
+                </div>
+                <button class="music-play-btn" id="playBtn" onclick="toggleMusic()">
+                    <i class="fa-solid fa-play" id="playIcon"></i>
+                </button>
+            </div>
+        </div>
     </div>
 
+    <!-- Thẻ Audio -->
+    <audio id="bgAudio" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-lofi.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        const audio = document.getElementById('bgAudio');
+        const playBtn = document.getElementById('playIcon');
+        const vinyl = document.getElementById('vinylDisc');
+
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.classList.remove('fa-play');
+                playBtn.classList.add('fa-pause');
+                vinyl.classList.add('playing');
+            } else {
+                audio.pause();
+                playBtn.classList.remove('fa-pause');
+                playBtn.classList.add('fa-play');
+                vinyl.classList.remove('playing');
+            }
+        }
+    </script>
 </body>
 </html>
